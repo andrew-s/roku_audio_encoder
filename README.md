@@ -1,7 +1,8 @@
 roku_audio_encoder
 ==================
 
-PHP Script to add a AAC audio stream to your files
+PHP Script to add a AAC audio stream to your files - the script takes the first audio stream, duplicates it and then
+encodes it to an AAC audio stream (keeping all of the original streams intact - including subtitles)
 
 Requirements
 ====
