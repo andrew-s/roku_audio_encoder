@@ -7,7 +7,7 @@ encodes it to an AAC audio stream (keeping all of the original streams intact - 
 Requirements
 ====
  * PHP 5.5+
- * FFMPEG with FFPROBE
+ * FFmpeg with ffprobe
 
 Running
 ====

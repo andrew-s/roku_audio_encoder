@@ -13,7 +13,7 @@ function array_search_partial($needle, $haystack)
 }
 
 // specify our configs
-$path_ffmpeg = '/wherever/ffmpeg';
+$path_ffmpeg = '/wherever/FFmpeg';
 $path_ffprobe = '/wherever/ffprobe';
 
 $path_input_folder = 'Y:\Input';
@@ -50,7 +50,7 @@ foreach (scandir($path_input_folder) as $file)
             die('File has no audio streams - can\'t proceed');
         }
 
-        // run ffmpeg (output isn't surpressed)
+        // run FFmpeg (output isn't surpressed)
         $file_name = end(explode('\\', $path_file));
         exec($path_ffmpeg . ' -i "' . $path_file . '" -map 0 -c:v copy -c:s copy -map 0:a:0 -c:a copy -c:a:' . count($audio_streams) . ' aac -strict -2 -b:a:' . count($audio_streams) . ' 386k "' . $path_output_folder . '\\' . $file_name . '"');
     }
