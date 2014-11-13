@@ -26,8 +26,9 @@ foreach (scandir($path_input_folder) as $file)
     $path_file = $path_input_folder . '\\' . $file;
 
     // skip
-    if ('.' === $file) continue;
-    if ('..' === $file) continue;
+    if('.' === $file) continue;
+    if('..' === $file) continue;
+    if(is_dir($path_file)) continue;
 
     // get the file info
     exec($path_ffprobe . ' -i "' . $path_file . '" 2>&1', $arrOutput);
