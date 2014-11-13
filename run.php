@@ -52,7 +52,7 @@ foreach (scandir($path_input_folder) as $file)
 
         // run FFmpeg (output isn't surpressed)
         $file_name = end(explode('\\', $path_file));
-        exec($path_ffmpeg . ' -i "' . $path_file . '" -map 0 -c:v copy -c:s copy -map 0:a:0 -c:a copy -c:a:' . count($audio_streams) . ' aac -strict -2 -b:a:' . count($audio_streams) . ' 386k "' . $path_output_folder . '\\' . $file_name . '"');
+        exec($path_ffmpeg . ' -i "' . $path_file . '" -map 0 -c:v copy -c:s copy -map 0:a:0 -c:a copy -c:a:' . count($audio_streams) . ' libvo_aacenc -ac 2 -b:a:' . count($audio_streams) . ' 320k "' . $path_output_folder . '\\' . $file_name . '"');
     }
 }
 
